@@ -7,7 +7,7 @@ int flag1=0;
 
 void setup() {
   size(800,600,P3D);
-  x1=random(200,600);
+  x1=random(300,500);
   y1=random(200,300);
 }
 
@@ -35,14 +35,19 @@ void draw() {
   if(flag1==2)
   {
     flag1=0;
-    x1=random(200,600);
+    x1=random(300,500);
     y1=random(200,300);
   }
   if(flag1==1)
   {
-     y1=y1-8;
+     y1=y1-11;
+     x1=x1-1.5;
+    // x1=(-1)*(x1);
   }
-  if(y1<0) flag1=2;
-  if(flag1==3) y1=y1+8;
- 
+  if(y1<0 || y1>height) flag1=2;
+  if(flag1==3) 
+  {
+    y1=y1+10;
+    x1=x1+2.2;
+  }
 }
